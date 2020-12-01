@@ -1,63 +1,63 @@
-CREATE TABLE [Пункт прокату] (
-[Код пункту прокату] INT NOT NULL PRIMARY KEY,
-Назва	 NVARCHAR(25) NOT NULL,
-Місто NVARCHAR(20) NOT NULL,
-Вулиця NVARCHAR(20) NOT NULL,
-Будинок NVARCHAR(6) NOT NULL,
-[Електронна пошта] NVARCHAR(30) NOT NULL,
-[Веб-сайт] NVARCHAR(35) NOT NULL,
-[Контактний номер] INT NOT NULL);
+CREATE TABLE [РџСѓРЅРєС‚ РїСЂРѕРєР°С‚Сѓ] (
+[РљРѕРґ РїСѓРЅРєС‚Сѓ РїСЂРѕРєР°С‚Сѓ] INT NOT NULL PRIMARY KEY,
+РќР°Р·РІР°	 NVARCHAR(25) NOT NULL,
+РњС–СЃС‚Рѕ NVARCHAR(20) NOT NULL,
+Р’СѓР»РёС†СЏ NVARCHAR(20) NOT NULL,
+Р‘СѓРґРёРЅРѕРє NVARCHAR(6) NOT NULL,
+[Р•Р»РµРєС‚СЂРѕРЅРЅР° РїРѕС€С‚Р°] NVARCHAR(30) NOT NULL,
+[Р’РµР±-СЃР°Р№С‚] NVARCHAR(35) NOT NULL,
+[РљРѕРЅС‚Р°РєС‚РЅРёР№ РЅРѕРјРµСЂ] INT NOT NULL);
 
-CREATE TABLE Працівник (
-[Код працівника] INT NOT NULL PRIMARY KEY,
-Прізвище NVARCHAR(20) NOT NULL,
-[Ім'я] NVARCHAR(20) NOT NULL,
-[По батькові] NVARCHAR(25) NOT NULL,
-Стать NVARCHAR(7) NOT NULL,
-Посада NVARCHAR(25) NOT NULL,
-[Контактний номер] INT NOT NULL);
+CREATE TABLE РџСЂР°С†С–РІРЅРёРє (
+[РљРѕРґ РїСЂР°С†С–РІРЅРёРєР°] INT NOT NULL PRIMARY KEY,
+РџСЂС–Р·РІРёС‰Рµ NVARCHAR(20) NOT NULL,
+[Р†Рј'СЏ] NVARCHAR(20) NOT NULL,
+[РџРѕ Р±Р°С‚СЊРєРѕРІС–] NVARCHAR(25) NOT NULL,
+РЎС‚Р°С‚СЊ NVARCHAR(7) NOT NULL,
+РџРѕСЃР°РґР° NVARCHAR(25) NOT NULL,
+[РљРѕРЅС‚Р°РєС‚РЅРёР№ РЅРѕРјРµСЂ] INT NOT NULL);
 
-CREATE TABLE Клієнт (
-[Код клієнта] INT NOT NULL PRIMARY KEY,
-Прізвище NVARCHAR(20) NOT NULL,
-[Ім'я] NVARCHAR(20) NOT NULL,
-[По батькові] NVARCHAR(25) NOT NULL,
-Стать NVARCHAR(7) NOT NULL,
-[Контактний номер] INT NOT NULL, 
-[Електронна пошта] NVARCHAR(30) NOT NULL);
+CREATE TABLE РљР»С–С”РЅС‚ (
+[РљРѕРґ РєР»С–С”РЅС‚Р°] INT NOT NULL PRIMARY KEY,
+РџСЂС–Р·РІРёС‰Рµ NVARCHAR(20) NOT NULL,
+[Р†Рј'СЏ] NVARCHAR(20) NOT NULL,
+[РџРѕ Р±Р°С‚СЊРєРѕРІС–] NVARCHAR(25) NOT NULL,
+РЎС‚Р°С‚СЊ NVARCHAR(7) NOT NULL,
+[РљРѕРЅС‚Р°РєС‚РЅРёР№ РЅРѕРјРµСЂ] INT NOT NULL, 
+[Р•Р»РµРєС‚СЂРѕРЅРЅР° РїРѕС€С‚Р°] NVARCHAR(30) NOT NULL);
 
 
-CREATE TABLE Виробник (
-[Код виробника] INT NOT NULL PRIMARY KEY,
-Назва NVARCHAR(25) NOT NULL,
-Місто NVARCHAR(20) NOT NULL,
-Вулиця NVARCHAR(20) NOT NULL,
-Будинок NVARCHAR(6) NOT NULL,
-[Контактний номер] INT NOT NULL,
-[Електронна пошта] NVARCHAR(30) NOT NULL);
+CREATE TABLE Р’РёСЂРѕР±РЅРёРє (
+[РљРѕРґ РІРёСЂРѕР±РЅРёРєР°] INT NOT NULL PRIMARY KEY,
+РќР°Р·РІР° NVARCHAR(25) NOT NULL,
+РњС–СЃС‚Рѕ NVARCHAR(20) NOT NULL,
+Р’СѓР»РёС†СЏ NVARCHAR(20) NOT NULL,
+Р‘СѓРґРёРЅРѕРє NVARCHAR(6) NOT NULL,
+[РљРѕРЅС‚Р°РєС‚РЅРёР№ РЅРѕРјРµСЂ] INT NOT NULL,
+[Р•Р»РµРєС‚СЂРѕРЅРЅР° РїРѕС€С‚Р°] NVARCHAR(30) NOT NULL);
 
-CREATE TABLE Товар (
-[Код товару] INT NOT NULL PRIMARY KEY,
-[Назва товару] NVARCHAR(35) NOT NULL,
-Ціна MONEY NOT NULL,
-Вага FLOAT NOT NULL,
-Матеріал NVARCHAR(15) NOT NULL,
-Колір NVARCHAR(10) NOT NULL,
-[Дата виробництва] DATE NOT NULL,
-[Код виробника] INT NOT NULL,
-CONSTRAINT Товар_Виробник FOREIGN KEY ([Код виробника]) REFERENCES Виробник ([Код виробника]) ON DELETE CASCADE ON UPDATE CASCADE);
+CREATE TABLE РўРѕРІР°СЂ (
+[РљРѕРґ С‚РѕРІР°СЂСѓ] INT NOT NULL PRIMARY KEY,
+[РќР°Р·РІР° С‚РѕРІР°СЂСѓ] NVARCHAR(35) NOT NULL,
+Р¦С–РЅР° MONEY NOT NULL,
+Р’Р°РіР° FLOAT NOT NULL,
+РњР°С‚РµСЂС–Р°Р» NVARCHAR(15) NOT NULL,
+РљРѕР»С–СЂ NVARCHAR(10) NOT NULL,
+[Р”Р°С‚Р° РІРёСЂРѕР±РЅРёС†С‚РІР°] DATE NOT NULL,
+[РљРѕРґ РІРёСЂРѕР±РЅРёРєР°] INT NOT NULL,
+CONSTRAINT РўРѕРІР°СЂ_Р’РёСЂРѕР±РЅРёРє FOREIGN KEY ([РљРѕРґ РІРёСЂРѕР±РЅРёРєР°]) REFERENCES Р’РёСЂРѕР±РЅРёРє ([РљРѕРґ РІРёСЂРѕР±РЅРёРєР°]) ON DELETE CASCADE ON UPDATE CASCADE);
 
-CREATE TABLE Замовлення (
-[Код замовлення] INT NOT NULL PRIMARY KEY,
-[Код працівника] INT NOT NULL,
-[Код клієнта] INT NOT NULL,
-[Код пункту прокату] INT NOT NULL,
-[Код товару] INT NOT NULL,
-[Кількість товару] INT NOT NULL,
-[Тривалість прокату] INT NOT NULL,
-[Дата замовлення] DATE NOT NULL,
-CONSTRAINT Замовлення_Працівник FOREIGN KEY ([Код працівника]) REFERENCES Працівник ([Код працівника]) ON DELETE CASCADE ON UPDATE CASCADE,
-CONSTRAINT Замовлення_Клієнт FOREIGN KEY ([Код клієнта]) REFERENCES Клієнт ([Код клієнта]) ON DELETE CASCADE ON UPDATE CASCADE,
-CONSTRAINT Замовлення_Пункт FOREIGN KEY ([Код пункту прокату]) REFERENCES [Пункт прокату] ([Код пункту прокату]) ON DELETE CASCADE ON UPDATE CASCADE,
-CONSTRAINT Замовлення_Товар FOREIGN KEY ([Код товару]) REFERENCES Товар ([Код товару]) ON DELETE CASCADE ON UPDATE CASCADE);
+CREATE TABLE Р—Р°РјРѕРІР»РµРЅРЅСЏ (
+[РљРѕРґ Р·Р°РјРѕРІР»РµРЅРЅСЏ] INT NOT NULL PRIMARY KEY,
+[РљРѕРґ РїСЂР°С†С–РІРЅРёРєР°] INT NOT NULL,
+[РљРѕРґ РєР»С–С”РЅС‚Р°] INT NOT NULL,
+[РљРѕРґ РїСѓРЅРєС‚Сѓ РїСЂРѕРєР°С‚Сѓ] INT NOT NULL,
+[РљРѕРґ С‚РѕРІР°СЂСѓ] INT NOT NULL,
+[РљС–Р»СЊРєС–СЃС‚СЊ С‚РѕРІР°СЂСѓ] INT NOT NULL,
+[РўСЂРёРІР°Р»С–СЃС‚СЊ РїСЂРѕРєР°С‚Сѓ] INT NOT NULL,
+[Р”Р°С‚Р° Р·Р°РјРѕРІР»РµРЅРЅСЏ] DATE NOT NULL,
+CONSTRAINT Р—Р°РјРѕРІР»РµРЅРЅСЏ_РџСЂР°С†С–РІРЅРёРє FOREIGN KEY ([РљРѕРґ РїСЂР°С†С–РІРЅРёРєР°]) REFERENCES РџСЂР°С†С–РІРЅРёРє ([РљРѕРґ РїСЂР°С†С–РІРЅРёРєР°]) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT Р—Р°РјРѕРІР»РµРЅРЅСЏ_РљР»С–С”РЅС‚ FOREIGN KEY ([РљРѕРґ РєР»С–С”РЅС‚Р°]) REFERENCES РљР»С–С”РЅС‚ ([РљРѕРґ РєР»С–С”РЅС‚Р°]) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT Р—Р°РјРѕРІР»РµРЅРЅСЏ_РџСѓРЅРєС‚ FOREIGN KEY ([РљРѕРґ РїСѓРЅРєС‚Сѓ РїСЂРѕРєР°С‚Сѓ]) REFERENCES [РџСѓРЅРєС‚ РїСЂРѕРєР°С‚Сѓ] ([РљРѕРґ РїСѓРЅРєС‚Сѓ РїСЂРѕРєР°С‚Сѓ]) ON DELETE CASCADE ON UPDATE CASCADE,
+CONSTRAINT Р—Р°РјРѕРІР»РµРЅРЅСЏ_РўРѕРІР°СЂ FOREIGN KEY ([РљРѕРґ С‚РѕРІР°СЂСѓ]) REFERENCES РўРѕРІР°СЂ ([РљРѕРґ С‚РѕРІР°СЂСѓ]) ON DELETE CASCADE ON UPDATE CASCADE);
  

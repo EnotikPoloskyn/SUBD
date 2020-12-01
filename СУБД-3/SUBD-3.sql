@@ -1,32 +1,32 @@
-ALTER TABLE Товар
-DROP CONSTRAINT Товар_Виробник
+ALTER TABLE РўРѕРІР°СЂ
+DROP CONSTRAINT РўРѕРІР°СЂ_Р’РёСЂРѕР±РЅРёРє
 
-ALTER TABLE Товар
-DROP COLUMN [Код виробника];	
+ALTER TABLE РўРѕРІР°СЂ
+DROP COLUMN [РљРѕРґ РІРёСЂРѕР±РЅРёРєР°];	
 
-ALTER TABLE Товар
-DROP COLUMN Матеріал
+ALTER TABLE РўРѕРІР°СЂ
+DROP COLUMN РњР°С‚РµСЂС–Р°Р»
 
-ALTER TABLE Товар
-ALTER COLUMN Колір nvarchar(15) NOT NULL; 
+ALTER TABLE РўРѕРІР°СЂ
+ALTER COLUMN РљРѕР»С–СЂ nvarchar(15) NOT NULL; 
 
-ALTER TABLE Виробник
-ALTER COLUMN [Електронна пошта] nvarchar(25) NULL; 
-
-
-ALTER TABLE Товар
-ALTER COLUMN [Код товару] INT NOT NULL
-
-ALTER TABLE Товар
-ADD Версія INT NOT NULL 
-
-ALTER TABLE Товар
-ADD CONSTRAINT UQ_Товар_Версія UNIQUE ([Код товару], Версія);
+ALTER TABLE Р’РёСЂРѕР±РЅРёРє
+ALTER COLUMN [Р•Р»РµРєС‚СЂРѕРЅРЅР° РїРѕС€С‚Р°] nvarchar(25) NULL; 
 
 
-ALTER TABLE Товар
-DROP CONSTRAINT Товар_Виробник
+ALTER TABLE РўРѕРІР°СЂ
+ALTER COLUMN [РљРѕРґ С‚РѕРІР°СЂСѓ] INT NOT NULL
 
-ALTER TABLE Товар
-ADD CONSTRAINT Товар_Виробник FOREIGN KEY ([Код виробника])
-REFERENCES Виробник ([Код виробника]) ON DELETE CASCADE; 
+ALTER TABLE РўРѕРІР°СЂ
+ADD Р’РµСЂСЃС–СЏ INT NOT NULL 
+
+ALTER TABLE РўРѕРІР°СЂ
+ADD CONSTRAINT UQ_РўРѕРІР°СЂ_Р’РµСЂСЃС–СЏ UNIQUE ([РљРѕРґ С‚РѕРІР°СЂСѓ], Р’РµСЂСЃС–СЏ);
+
+
+ALTER TABLE РўРѕРІР°СЂ
+DROP CONSTRAINT РўРѕРІР°СЂ_Р’РёСЂРѕР±РЅРёРє
+
+ALTER TABLE РўРѕРІР°СЂ
+ADD CONSTRAINT РўРѕРІР°СЂ_Р’РёСЂРѕР±РЅРёРє FOREIGN KEY ([РљРѕРґ РІРёСЂРѕР±РЅРёРєР°])
+REFERENCES Р’РёСЂРѕР±РЅРёРє ([РљРѕРґ РІРёСЂРѕР±РЅРёРєР°]) ON DELETE CASCADE; 
